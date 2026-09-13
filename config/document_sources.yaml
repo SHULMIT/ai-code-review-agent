@@ -1,0 +1,33 @@
+# Approved documentation sources that retrieve_documentation() (in
+# doc_retrieval_tool.py) is allowed to read and cite, grouped by role. This
+# is an allowlist, not a directory scan: a real, content-bearing file that
+# exists on disk but is not listed here is deliberately excluded, never read.
+#
+# architecture is "interim": docs/architecture-baseline.md is sourced from
+# the original project task specification (not invented), filling the gap
+# until this project's own teams publish real architecture documentation.
+# The other three roles have no source material yet and stay "planned" with
+# empty approved_paths.
+#
+# Paths in approved_paths are relative to the docs_root passed to
+# retrieve_documentation() (docs/ at the repository root by default - see
+# DEFAULT_DOCS_ROOT in graph/build_graph.py). Change a role's status to
+# "active" once real, merged team documentation replaces or joins its
+# current sources.
+
+architecture:
+  status: interim
+  approved_paths:
+    - architecture-baseline.md
+
+api_contracts:
+  status: planned
+  approved_paths: []
+
+coding_guidelines:
+  status: planned
+  approved_paths: []
+
+service_docs:
+  status: planned
+  approved_paths: []

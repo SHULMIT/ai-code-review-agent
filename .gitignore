@@ -1,0 +1,27 @@
+.venv/
+.env
+.env.local
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+secrets/
+# Defensive: a downloaded GitHub App private key sometimes lands at the
+# service root (GitHub's own default download name) before being moved into
+# secrets/ - never trackable even if that move is missed.
+*.pem
+
+# Ad-hoc scripts/manual_run.py output, redirected to a file for a manual
+# verification session - never meant to be tracked.
+*_run.txt
+
+# scripts/start_local_review.ps1's own runtime output (service/smee logs and
+# tracked PID files) - always local, never meant to be tracked.
+logs/
+
+# Editors and OS artifacts.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

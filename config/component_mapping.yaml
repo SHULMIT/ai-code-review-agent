@@ -1,0 +1,35 @@
+# Component.INDEXING_PIPELINE has no matching rule below because no indexing
+# service directory exists yet on this branch (verified: services/indexing/
+# does not exist). Add a rule here once that directory is created elsewhere
+# in the project - do not invent a placeholder pattern before then.
+
+- pattern: "services/mock_agent/*"
+  component: AGENT_HARNESS
+- pattern: "services/agent/*"
+  component: AGENT_HARNESS
+- pattern: "services/mock_search/*"
+  component: SEARCH_SERVICE
+- pattern: "services/search/*"
+  component: SEARCH_SERVICE
+- pattern: "services/mock_model/*"
+  component: MODEL_SERVICE
+- pattern: "services/models/*"
+  component: MODEL_SERVICE
+- pattern: "**/Dockerfile"
+  component: INFRASTRUCTURE
+- pattern: "docker-compose*.yml"
+  component: INFRASTRUCTURE
+- pattern: "services/frontend/*"
+  component: FRONTEND
+
+# Real example-org/example-repo top-level directories (services/* above are the
+# mock/fixture layout used by the PR #105 evaluation fixture, kept as-is).
+# "**" is required, not "*", since these directories are not flat - a
+# single "*" never crosses a "/" (see component_classifier.py's
+# _pattern_to_regex) and would miss every file below one directory deep.
+- pattern: "agent-runtime/**"
+  component: AGENT_HARNESS
+- pattern: "rag-retrieval-tool/**"
+  component: SEARCH_SERVICE
+- pattern: "frontend/**"
+  component: FRONTEND

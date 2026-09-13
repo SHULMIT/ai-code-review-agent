@@ -1,0 +1,23 @@
+{
+  "action": "requested_action",
+  "requested_action": {
+    "identifier": "run_code_review"
+  },
+  "check_run": {
+    "id": 987654,
+    "head_sha": "a1b2c3d4e5f678901234567890abcdef12345678",
+    "pull_requests": [
+      {
+        "number": 42
+      }
+    ]
+  },
+  "repository": {
+    "full_name": "example-org/example-repo",
+    "fork": false,
+    "unused_repository_field": "ignored"
+  },
+  "installation": {
+    "id": 123456
+  }
+}

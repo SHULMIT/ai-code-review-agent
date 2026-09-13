@@ -1,0 +1,26 @@
+# Ignore file for the Dockerfile.
+#
+# Exclude everything, then add back only what the Dockerfile copies.
+*
+
+!pyproject.toml
+!uv.lock
+!src
+!prompts
+!config
+!migrations
+!docs
+
+# Re-exclude things that would otherwise ride along inside the paths above.
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.venv
+**/.coverage
+**/htmlcov
+
+# Never, under any circumstances, into the image.
+**/.env
+**/.env.*
+**/secrets
+**/*.pem

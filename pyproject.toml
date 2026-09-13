@@ -1,0 +1,35 @@
+[project]
+name = "code-review-agent"
+version = "0.1.0"
+description = "Automated code review agent for DataNet pull requests"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi",
+    "pydantic",
+    "pydantic-settings",
+    "langgraph",
+    "httpx",
+    "PyJWT",
+    "cryptography",
+    "psycopg[binary]",
+    "pyyaml",
+    "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "pytest-cov"]
+
+[tool.uv]
+package = true
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-p no:langsmith_plugin --cov=review_agent --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src/review_agent"]
+
+[tool.coverage.report]
+fail_under = 85

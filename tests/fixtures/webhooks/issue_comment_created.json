@@ -1,0 +1,19 @@
+{
+  "action": "created",
+  "repository": {
+    "full_name": "example-org/example-repo",
+    "fork": false
+  },
+  "installation": {
+    "id": 123456
+  },
+  "issue": {
+    "number": 42,
+    "pull_request": {
+      "url": "https://api.github.com/repos/example-org/example-repo/pulls/42"
+    }
+  },
+  "comment": {
+    "body": "/review"
+  }
+}
